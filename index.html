@@ -32,8 +32,18 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
     <a-nft type="nft" url="https://duanjingru.github.io/HelloWorld/image/u=2830019438,3834311165&fm=26&fmt=auto"
       smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
-      <a-entity geometry="primitive: box" material="color: red" light="type: point; intensity: 2.0" position="0 2 -5">
-      </a-entity>
+      <a-assets>
+        <img id="boxTexture" src="https://duanjingru.github.io/HelloWorld/image/0.png">
+        <img id="skyTexture" src="https://duanjingru.github.io/HelloWorld/image/Snipaste_2021-12-08_10-40-02.png">
+      </a-assets>
+      <a-box src="#boxTexture" width="3" height="3" position="0 2 -5" rotation="0 45 45" scale="1 1 1"
+        animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true">
+      </a-box>
+      <a-sky src="#skyTexture"></a-sky>
+      <a-plane src="#skyTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
+
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
